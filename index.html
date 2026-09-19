@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        @keyframes pulse-slow {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: scale(1.04);
+            }
+        }
+
+        @keyframes wave-bar {
+
+            0%,
+            100% {
+                height: 4px;
+            }
+
+            50% {
+                height: 16px;
+            }
+        }
+
+        .animate-wave-1 {
+            animation: wave-bar 1.2s ease-in-out infinite;
+        }
+
+        .animate-wave-2 {
+            animation: wave-bar 0.9s ease-in-out 0.2s infinite;
+        }
+
+        .animate-wave-3 {
+            animation: wave-bar 1.4s ease-in-out 0.4s infinite;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+        id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-container": "#d1a1ff", "on-error-container": "#ffdad6", "secondary-fixed": "#f0dbff", "surface-container": "#1d1e2f", "on-primary": "#620040", "secondary": "#ddb8ff", "on-primary-container": "#6d0047", "on-tertiary-container": "#4f2f00", "surface-container-lowest": "#0c0d1d", "inverse-primary": "#a43073", "surface-bright": "#37384a", "surface-container-high": "#28293a", "inverse-on-surface": "#2e2f41", "background": "#111222", "on-surface": "#e2e0f8", "on-secondary-fixed-variant": "#62259b", "secondary-fixed-dim": "#ddb8ff", "secondary-container": "#62259b", "on-background": "#e2e0f8", "primary-fixed": "#ffd8e7", "on-secondary": "#490081", "primary-fixed-dim": "#ffafd3", "on-secondary-fixed": "#2c0051", "on-primary-fixed-variant": "#85145a", "tertiary-fixed": "#ffddb8", "tertiary": "#ffb95f", "surface": "#111222", "on-surface-variant": "#dac0c9", "surface-container-low": "#191a2b", "error-container": "#93000a", "error": "#ffb4ab", "tertiary-container": "#de8e00", "primary": "#ffafd3", "surface-tint": "#ffafd3", "on-tertiary": "#472a00", "on-tertiary-fixed-variant": "#653e00", "outline": "#a28a93", "on-error": "#690005", "surface-dim": "#111222", "outline-variant": "#544249", "tertiary-fixed-dim": "#ffb95f", "primary-container": "#f472b6", "surface-container-highest": "#333345", "on-primary-fixed": "#3d0026", "surface-variant": "#333345", "inverse-surface": "#e2e0f8", "on-tertiary-fixed": "#2a1700" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.75rem", "margin": "2rem", "space-xs": "0.25rem", "space-md": "1rem", "gutter": "1.5rem", "space-xl": "3rem", "space-sm": "0.5rem" }, "fontFamily": { "body-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "display-lg": ["Playfair Display"], "body-sm": ["Plus Jakarta Sans"], "headline-sm": ["Playfair Display"], "label-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Playfair Display"], "headline-md": ["Playfair Display"], "headline-lg-mobile": ["Playfair Display"], "label-sm": ["Plus Jakarta Sans"], "headline-lg": ["Playfair Display"] }, "fontSize": { "body-lg": ["18px", { "lineHeight": "30px", "fontWeight": "400" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "500" }], "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-lg-mobile": ["38px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["26px", { "lineHeight": "34px", "fontWeight": "500" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "500" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "600" }], "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "500" }] } } } };</script>
+</head>
+
+<body
+    class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen relative overflow-x-hidden">
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute -top-32 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/3 -right-24 w-80 h-80 bg-secondary/10 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-20 left-1/3 w-[30rem] h-[30rem] bg-tertiary/5 rounded-full blur-3xl"></div>
+        <div
+            class="absolute inset-0 bg-[radial-gradient(#dac0c9_0.75px,transparent_0.75px)] [background-size:32px_32px] opacity-20">
+        </div>
+    </div>
+    <header
+        class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-surface-container-lowest/70 shadow-[0_4px_30px_rgba(0,0,0,0.35)]">
+        <div class="h-20 max-w-7xl mx-auto px-margin flex items-center justify-between gap-gutter">
+            <div class="flex items-center gap-space-md">
+                <div class="flex items-center gap-space-xs text-primary"><span
+                        class="material-symbols-outlined text-primary drop-shadow-[0_0_8px_rgba(244,114,182,0.6)]">auto_awesome</span><span
+                        class="font-headline-sm text-headline-sm text-primary tracking-wide hidden sm:inline">Starlight
+                        Love</span></div>
+                <div class="h-4 w-px bg-outline-variant/40 hidden md:block"></div><button
+                    class="hidden lg:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-low hover:bg-surface-container-high transition-all text-on-surface-variant group"
+                    id="secret-heart-easter-egg" title="Tap to awaken celestial hearts" type="button"><span
+                        class="material-symbols-outlined text-primary-container group-hover:scale-125 transition-transform drop-shadow-[0_0_6px_rgba(244,114,182,0.8)]">favorite</span><span
+                        class="font-label-sm text-label-sm tracking-wider uppercase text-on-surface-variant group-hover:text-on-surface">5
+                        Hearts Left</span></button>
+            </div>
+            <nav class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container/60 rounded-full backdrop-blur-md"
+                data-active-classes="bg-primary text-on-primary shadow-[0_0_16px_rgba(255,175,211,0.5)] font-semibold scale-105">
+                <a aria-current="page"
+                    class="px-space-sm py-space-xs rounded-full transition-all bg-primary text-on-primary shadow-[0_0_16px_rgba(255,175,211,0.5)] font-semibold scale-105"
+                    data-path="welcome" href="#">Welcome</a><a
+                    class="px-space-sm py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all"
+                    data-path="countdown" href="#">Our Time</a><a
+                    class="px-space-sm py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all"
+                    data-path="wish-cake" href="#">Make a Wish</a><a
+                    class="px-space-sm py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all"
+                    data-path="love-letter" href="#">Proposal Letter</a><a
+                    class="px-space-sm py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all"
+                    data-path="memories" href="#">Memories</a><a
+                    class="px-space-sm py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all"
+                    data-path="why-youre-special" href="#">Why You</a><a
+                    class="px-space-sm py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all"
+                    data-path="find-my-heart" href="#">Find My Heart</a><a
+                    class="px-space-sm py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all"
+                    data-path="grand-finale" href="#">Will You Be Mine?</a></nav>
+            <div class="flex items-center gap-space-sm">
+                <div
+                    class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-high/60 backdrop-blur-md">
+                    <div aria-hidden="true" class="flex items-center gap-0.5 h-4 px-1">
+                        <div class="w-1 bg-primary rounded-full animate-wave-1"></div>
+                        <div class="w-1 bg-secondary rounded-full animate-wave-2"></div>
+                        <div class="w-1 bg-tertiary rounded-full animate-wave-3"></div>
+                    </div><button aria-label="Ambient Romantic Sound"
+                        class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors flex items-center gap-0.5"
+                        type="button"><span class="material-symbols-outlined text-sm">music_note</span><span
+                            class="hidden md:inline">Serenade</span></button>
+                </div><button
+                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-secondary-container text-secondary font-label-sm text-label-sm hover:bg-secondary hover:text-on-secondary shadow-[0_0_12px_rgba(221,184,255,0.25)] transition-all"
+                    type="button"><span class="material-symbols-outlined text-base">share</span><span
+                        class="hidden sm:inline">Share Surprise</span></button><img alt="Profile"
+                    class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/40 shadow-[0_0_10px_rgba(244,114,182,0.4)]"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-tnToKG-8NkKPjllU8TTmDM1kPgFgk-EL4--GNI5otx9Qa9OcFLLcli9iblw42JrOR1EGoGJQlJKj4kbO_BrqZWEQ3CnakC27tc9ca8DrsBHawYK873wnqeM174M-3zpMoRgjKfKJ76uqcQl8C1KM2lORJRa7kgI8Ctg74lcUUKtnA5h_4h7rDsz0weHkznNw_qZYxADOigAGwACSBnn39M2NuYtvaoXnjR5M2ACDKFkCExCnV5lx" />
+            </div>
+        </div>
+    </header>
+    <main class="relative z-10 w-full pt-20 bg-transparent min-h-[calc(100vh-5rem)]">
+        <div class="flex flex-col w-full text-on-surface select-none relative">
+            <!-- Toast Notification -->
+            <div class="fixed top-24 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-all duration-300 transform -translate-y-2 bg-surface-container-high/90 text-primary border-0 rounded-full px-space-md py-space-xs shadow-xl backdrop-blur-md flex items-center gap-space-xs font-label-md text-label-md"
+                id="toast">
+                <span class="material-symbols-outlined text-primary text-base">favorite</span>
+                <span id="toast-text">Surprise link copied with love!</span>
+            </div>
+            <!-- Ambient Audio Synthesizer Toggle & Controller (Fallback WebAudio Lofi Melodic Chords) -->
+            <audio id="audio-track" loop="" preload="none">
+                <source src="https://assets.mixkit.co/music/preview/mixkit-romantic-moment-1110.mp3" type="audio/mp3" />
+            </audio>
+            <!-- CHAPTER 1: WELCOME SCREEN -->
+            <section
+                class="chapter-pane min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center relative px-margin py-space-xl overflow-hidden"
+                id="chapter-welcome">
+                <!-- Star Canvas Background for this hero -->
+                <canvas class="absolute inset-0 pointer-events-none z-0 opacity-60" id="stars-canvas"></canvas>
+                <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center text-center">
+                    <!-- Romantic Overline Chip -->
+                    <div
+                        class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container/60 backdrop-blur-md text-primary font-label-md text-label-md mb-space-lg shadow-sm">
+                        <span class="material-symbols-outlined text-sm text-primary animate-spin"
+                            style="animation-duration: 6s;">arrow_back_ios_new</span>
+                        <span>A Celestial Love Story Dedicated To You</span>
+                    </div>
+                    <!-- 3D Cute Bear with Glowing Heart -->
+                    <div class="relative group my-space-sm">
+                        <div
+                            class="absolute inset-0 rounded-full bg-primary/20 blur-3xl transform scale-110 group-hover:scale-125 transition-transform duration-700">
+                        </div>
+                        <div class="relative w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full p-2 bg-gradient-to-tr from-primary/30 via-secondary/20 to-tertiary/20 backdrop-blur-xl shadow-2xl flex items-center justify-center animate-bounce"
+                            style="animation-duration: 4s;">
+                            <img alt="Fluffy Teddy Bear Holding Glowing Neon Heart"
+                                class="w-full h-full object-cover rounded-full shadow-[inset_0_0_30px_rgba(0,0,0,0.5)]"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-tnToKG-8NkKPjllU8TTmDM1kPgFgk-EL4--GNI5otx9Qa9OcFLLcli9iblw42JrOR1EGoGJQlJKj4kbO_BrqZWEQ3CnakC27tc9ca8DrsBHawYK873wnqeM174M-3zpMoRgjKfKJ76uqcQl8C1KM2lORJRa7kgI8Ctg74lcUUKtnA5h_4h7rDsz0weHkznNw_qZYxADOigAGwACSBnn39M2NuYtvaoXnjR5M2ACDKFkCExCnV5lx" />
+                        </div>
+                    </div>
+                    <!-- Headline & Subtitle -->
+                    <h1
+                        class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface font-semibold tracking-tight mt-space-md max-w-3xl">
+                        I coded this little surprise <span class="text-primary italic font-serif">just for you</span>
+                        <span class="inline-block text-primary animate-pulse">❤️</span>
+                    </h1>
+                    <p
+                        class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mt-space-sm mb-space-xl leading-relaxed">
+                        A magical starlight journey celebrating the kindest, sweetest, and most wonderful human in the
+                        entire universe.
+                    </p>
+                    <!-- Primary CTA Button with Starlight Glow -->
+                    <div class="flex flex-col sm:flex-row items-center gap-space-md">
+                        <button
+                            class="group relative px-space-xl py-space-md rounded-full bg-gradient-to-r from-primary-container via-secondary to-primary text-on-primary font-label-lg text-label-lg shadow-[0_0_30px_rgba(244,114,182,0.45)] hover:shadow-[0_0_45px_rgba(244,114,182,0.7)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-space-sm"
+                            onclick="goToChapter('countdown')" type="button">
+                            <span
+                                class="material-symbols-outlined group-hover:rotate-12 transition-transform">favorite</span>
+                            <span>Open My Proposal Surprise</span>
+                            <span
+                                class="material-symbols-outlined text-sm opacity-70 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </button>
+                        <button
+                            class="px-space-md py-space-sm rounded-full bg-surface-container-high/50 hover:bg-surface-container-high text-on-surface font-label-md text-label-md backdrop-blur-md shadow-sm transition-all flex items-center gap-space-xs"
+                            onclick="triggerConfettiShower()" type="button">
+                            <span class="material-symbols-outlined text-tertiary text-base">celebration</span>
+                            <span>Shower Petals</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!-- CHAPTER 2: ROMANTIC TIMER -->
+            <section
+                class="chapter-pane hidden min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center relative px-margin py-space-xl"
+                id="chapter-countdown">
+                <div class="max-w-4xl mx-auto w-full flex flex-col items-center text-center">
+                    <!-- Breadcrumb badge -->
+                    <div
+                        class="px-space-md py-space-xs rounded-full bg-surface-container-low/80 text-secondary font-label-sm text-label-sm uppercase tracking-widest mb-space-md backdrop-blur-sm">
+                        Chapter II · Time Spent Thinking Of You
+                    </div>
+                    <h2
+                        class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-semibold max-w-2xl">
+                        Every single second with you feels like <span class="text-secondary italic">pure magic</span> ❤️
+                    </h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant max-w-lg mt-space-xs mb-space-xl">
+                        Time seems to stand still when I await your smile, yet races with joy whenever you are near.
+                    </p>
+                    <!-- Glow Countdown Timer Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md w-full max-w-2xl mb-space-xl">
+                        <!-- Days Card -->
+                        <div
+                            class="relative group p-space-md sm:p-space-lg rounded-2xl bg-surface-container/70 backdrop-blur-xl shadow-xl flex flex-col items-center justify-center transition-transform hover:-translate-y-1">
+                            <div
+                                class="absolute -inset-0.5 bg-gradient-to-br from-primary to-transparent rounded-2xl opacity-20 group-hover:opacity-60 transition-opacity blur-sm">
+                            </div>
+                            <div class="relative z-10 font-display-lg text-display-lg-mobile md:text-display-lg text-primary font-bold"
+                                id="timer-days">00</div>
+                            <div
+                                class="relative z-10 font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mt-space-xs">
+                                Days</div>
+                        </div>
+                        <!-- Hours Card -->
+                        <div
+                            class="relative group p-space-md sm:p-space-lg rounded-2xl bg-surface-container/70 backdrop-blur-xl shadow-xl flex flex-col items-center justify-center transition-transform hover:-translate-y-1">
+                            <div
+                                class="absolute -inset-0.5 bg-gradient-to-br from-secondary to-transparent rounded-2xl opacity-20 group-hover:opacity-60 transition-opacity blur-sm">
+                            </div>
+                            <div class="relative z-10 font-display-lg text-display-lg-mobile md:text-display-lg text-secondary font-bold"
+                                id="timer-hours">14</div>
+                            <div
+                                class="relative z-10 font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mt-space-xs">
+                                Hours</div>
+                        </div>
+                        <!-- Minutes Card -->
+                        <div
+                            class="relative group p-space-md sm:p-space-lg rounded-2xl bg-surface-container/70 backdrop-blur-xl shadow-xl flex flex-col items-center justify-center transition-transform hover:-translate-y-1">
+                            <div
+                                class="absolute -inset-0.5 bg-gradient-to-br from-tertiary to-transparent rounded-2xl opacity-20 group-hover:opacity-60 transition-opacity blur-sm">
+                            </div>
+                            <div class="relative z-10 font-display-lg text-display-lg-mobile md:text-display-lg text-tertiary font-bold"
+                                id="timer-minutes">28</div>
+                            <div
+                                class="relative z-10 font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mt-space-xs">
+                                Minutes</div>
+                        </div>
+                        <!-- Seconds Card -->
+                        <div
+                            class="relative group p-space-md sm:p-space-lg rounded-2xl bg-surface-container/70 backdrop-blur-xl shadow-xl flex flex-col items-center justify-center transition-transform hover:-translate-y-1">
+                            <div
+                                class="absolute -inset-0.5 bg-gradient-to-br from-primary-container to-transparent rounded-2xl opacity-20 group-hover:opacity-60 transition-opacity blur-sm">
+                            </div>
+                            <div class="relative z-10 font-display-lg text-display-lg-mobile md:text-display-lg text-primary-container font-bold"
+                                id="timer-seconds">52</div>
+                            <div
+                                class="relative z-10 font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mt-space-xs">
+                                Seconds</div>
+                        </div>
+                    </div>
+                    <!-- Celebration Status Box -->
+                    <div
+                        class="p-space-lg rounded-2xl bg-surface-container-low/90 backdrop-blur-md max-w-xl w-full text-center shadow-lg mb-space-lg">
+                        <div class="flex items-center justify-center gap-space-xs text-tertiary mb-space-xs">
+                            <span class="material-symbols-outlined text-lg">favorite</span>
+                            <span class="font-label-lg text-label-lg font-semibold tracking-wide">FROM MY HEART TO YOURS</span>
+                            <span class="material-symbols-outlined text-lg">favorite</span>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface">
+                            My heart beat faster the very first day I saw you, and every second since has been a beautiful dream.
+                        </p>
+                    </div>
+                    <!-- Navigation Actions -->
+                    <div class="flex items-center gap-space-md">
+                        <button
+                            class="px-space-md py-space-sm rounded-full bg-surface-container-high/60 text-on-surface font-label-md text-label-md hover:bg-surface-container transition-all"
+                            onclick="goToChapter('welcome')" type="button">
+                            ← Back
+                        </button>
+                        <button
+                            class="px-space-xl py-space-md rounded-full bg-gradient-to-r from-primary-container to-secondary text-on-primary font-label-lg text-label-lg shadow-[0_0_25px_rgba(244,114,182,0.4)] hover:scale-105 transition-all flex items-center gap-space-xs"
+                            onclick="goToChapter('wish-cake')" type="button">
+                            <span>Light A Wish For Us</span>
+                            <span class="material-symbols-outlined text-base">auto_awesome</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!-- CHAPTER 3: BIRTHDAY GREETING & INTERACTIVE CAKE -->
+            <section
+                class="chapter-pane hidden min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center relative px-margin py-space-xl"
+                id="chapter-wish-cake">
+                <div class="max-w-5xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+                    <!-- Left Column: Emotional Visual Card -->
+                    <div class="lg:col-span-5 flex flex-col items-center">
+                        <div class="relative w-full aspect-square rounded-3xl overflow-hidden shadow-2xl group">
+                            <img alt="Glow Heart Balloon Tree over Dreamy Twilight Town"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUOOzn2k3gQ7sPxLkmv1DLD75-SMAT36y69pJzu_cvX7IpZ1hEz7IoP4P-K0Z_QzPz7Pnv8xU2c7jUxSgV74CFS1H9cAHCGsw1fAxHyRXVOGYP3iG3v6HPO7HjBuBqVLEMBz4ERmg2Jf-zbgjUyjjJnIXcoX5Kt6sIfnTQcz7yKB5M7Thho6GOrZ6WadlcL1y9jALG-ScKqwcm8ohBaWjl9ETB0-CN4EDSeY_cji0Hm9IRMpP0YI2J" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80">
+                            </div>
+                            <div
+                                class="absolute bottom-4 left-4 right-4 p-space-md rounded-xl bg-surface-container-lowest/80 backdrop-blur-md">
+                                <span
+                                    class="font-label-sm text-label-sm text-primary uppercase tracking-wider block mb-1">Twilight
+                                    Promise</span>
+                                <p class="font-headline-sm text-headline-sm text-on-surface font-medium italic">"Every
+                                    balloon carries a reason why I adore you."</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right Column: Interactive Blowable Birthday Cake -->
+                    <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+                        <div
+                            class="px-space-md py-space-xs rounded-full bg-surface-container-low/80 text-primary font-label-sm text-label-sm uppercase tracking-widest mb-space-xs">
+                            Chapter III · Make A Wish
+                        </div>
+                        <h2
+                            class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-semibold mb-space-xs">
+                            Make A Wish With Me, <span class="text-primary italic">My Favorite Person</span> ❤️
+                        </h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-space-lg">
+                            Tap the glowing starlight candle, whisper a wish for our story, and send it into the cosmic sky!
+                        </p>
+                        <!-- Interactive 3-Tier Cake Artwork -->
+                        <div class="relative w-72 sm:w-80 py-6 flex flex-col items-center justify-end cursor-pointer group"
+                            id="cake-container" onclick="blowCandle()">
+                            <!-- Candle Flame & Smoke -->
+                            <div class="relative flex flex-col items-center mb-1">
+                                <!-- Flame (Toggled on click) -->
+                                <div class="w-5 h-7 rounded-full bg-gradient-to-t from-tertiary-container via-tertiary to-white shadow-[0_0_15px_rgba(255,185,95,0.9)] animate-pulse transition-all duration-500"
+                                    id="candle-flame"></div>
+                                <!-- Smoke Particle (Hidden initially) -->
+                                <div class="hidden w-2 h-8 bg-surface-container-highest/60 rounded-full blur-[1px] animate-fade-out -translate-y-2"
+                                    id="candle-smoke"></div>
+                                <!-- Candle Stick -->
+                                <div
+                                    class="w-3 h-10 bg-gradient-to-b from-primary to-primary-container rounded-sm shadow-sm">
+                                </div>
+                            </div>
+                            <!-- Tier 1 (Top) -->
+                            <div
+                                class="w-32 h-14 bg-gradient-to-r from-surface-container via-surface-container-high to-surface-container rounded-t-2xl shadow-md relative overflow-hidden flex items-center justify-center">
+                                <div class="absolute inset-x-0 top-0 h-2 bg-primary/40 rounded-full"></div>
+                                <div class="flex gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+                                    <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                                    <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                                </div>
+                            </div>
+                            <!-- Tier 2 (Middle) -->
+                            <div
+                                class="w-48 h-16 bg-gradient-to-r from-surface-container-high via-surface-bright to-surface-container-high shadow-lg relative overflow-hidden flex items-center justify-around px-4">
+                                <div class="absolute inset-x-0 top-0 h-3 bg-secondary/30"></div>
+                                <span class="material-symbols-outlined text-primary text-sm">favorite</span>
+                                <span class="material-symbols-outlined text-secondary text-sm">star</span>
+                                <span class="material-symbols-outlined text-primary text-sm">favorite</span>
+                                <span class="material-symbols-outlined text-tertiary text-sm">auto_awesome</span>
+                            </div>
+                            <!-- Tier 3 (Bottom Stand) -->
+                            <div
+                                class="w-64 h-20 bg-gradient-to-r from-surface-container-lowest via-surface-container to-surface-container-lowest rounded-b-2xl shadow-2xl relative overflow-hidden flex items-center justify-center">
+                                <div class="absolute inset-x-0 top-0 h-3 bg-primary/20"></div>
+                                <span class="font-label-md text-label-md text-primary tracking-widest uppercase">✨
+                                    Forever Yours ✨</span>
+                            </div>
+                            <!-- Cake Plate -->
+                            <div class="w-72 h-3 bg-surface-variant rounded-full shadow-xl mt-1"></div>
+                        </div>
+                        <!-- Wish Confirmation Banner (Appears when blown) -->
+                        <div class="hidden mt-space-md p-space-md rounded-2xl bg-surface-container-high/90 backdrop-blur-md text-on-surface shadow-xl flex items-center gap-space-sm animate-fade-in max-w-md"
+                            id="wish-revealed">
+                            <span
+                                class="material-symbols-outlined text-tertiary text-3xl animate-bounce">auto_awesome</span>
+                            <div>
+                                <h4 class="font-headline-sm text-headline-sm text-tertiary">Wish Whispered to the Stars!
+                                </h4>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">May our dream of walking together under the stars come true.</p>
+                            </div>
+                        </div>
+                        <div class="mt-space-lg flex items-center gap-space-md">
+                            <button
+                                class="px-space-md py-space-sm rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-container transition-all flex items-center gap-space-xs"
+                                onclick="blowCandle()" type="button">
+                                <span class="material-symbols-outlined text-base text-tertiary">auto_awesome</span>
+                                <span id="blow-btn-text">Light Our Flame ✨</span>
+                            </button>
+                            <button
+                                class="px-space-lg py-space-sm rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-md hover:scale-105 transition-all flex items-center gap-space-xs"
+                                onclick="goToChapter('love-letter')" type="button">
+                                <span>Read My Proposal Letter 💌</span>
+                                <span class="material-symbols-outlined text-sm">mail</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- CHAPTER 4: INTERACTIVE TYPEWRITER LOVE LETTER -->
+            <section
+                class="chapter-pane hidden min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center relative px-margin py-space-xl"
+                id="chapter-love-letter">
+                <div class="max-w-3xl mx-auto w-full flex flex-col items-center">
+                    <div
+                        class="px-space-md py-space-xs rounded-full bg-surface-container-low/80 text-primary font-label-sm text-label-sm uppercase tracking-widest mb-space-xs">
+                        Chapter IV · Scribe of the Heart
+                    </div>
+                    <h2
+                        class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-semibold text-center mb-space-lg">
+                        A Confession From My Deepest Heart
+                    </h2>
+                    <!-- Sealed Envelope Container -->
+                    <div class="w-full max-w-xl relative flex flex-col items-center" id="envelope-wrapper">
+                        <div class="w-full h-72 sm:h-80 rounded-3xl bg-gradient-to-b from-surface-container-high to-surface-container shadow-2xl p-space-lg flex flex-col items-center justify-center relative overflow-hidden transition-all duration-500"
+                            id="closed-envelope">
+                            <div
+                                class="absolute -top-16 inset-x-0 h-32 bg-surface-container-highest/40 rotate-12 blur-xl">
+                            </div>
+                            <!-- Wax Seal -->
+                            <button
+                                class="group relative w-24 h-24 rounded-full bg-gradient-to-br from-error to-on-primary flex items-center justify-center shadow-[0_0_25px_rgba(244,114,182,0.5)] hover:scale-110 active:scale-95 transition-all"
+                                onclick="openLoveLetter()" type="button">
+                                <span
+                                    class="material-symbols-outlined text-primary-fixed text-4xl group-hover:rotate-12 transition-transform">favorite</span>
+                                <span
+                                    class="absolute -bottom-8 font-label-sm text-label-sm text-secondary uppercase tracking-wider whitespace-nowrap">Tap
+                                    Wax Seal</span>
+                            </button>
+                            <p class="font-headline-sm text-headline-sm text-on-surface mt-space-xl italic text-center">
+                                To The One Who Stole My Heart</p>
+                        </div>
+                        <!-- Open Letter Parchment (Appears smooth with typewriter effect) -->
+                        <div class="hidden w-full rounded-3xl bg-surface-container-lowest/95 backdrop-blur-2xl p-space-lg sm:p-space-xl shadow-2xl text-left relative overflow-hidden"
+                            id="open-letter">
+                            <!-- Decorative Top Stamp & Header -->
+                            <div class="flex items-center justify-between border-0 pb-space-sm mb-space-md">
+                                <div class="flex items-center gap-space-xs text-primary">
+                                    <span class="material-symbols-outlined text-lg">favorite</span>
+                                    <span
+                                        class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Private
+                                        Epistle · Eternal</span>
+                                </div>
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-tertiary">
+                                    <span class="material-symbols-outlined text-xl">auto_awesome</span>
+                                </div>
+                            </div>
+                            <!-- Typewriter Output Box -->
+                            <div class="font-body-lg text-body-lg text-on-surface leading-relaxed min-h-[220px] whitespace-pre-line"
+                                id="letter-content-box"></div>
+                            <div class="inline-block w-2 h-5 bg-primary animate-pulse -mb-0.5" id="typewriter-cursor">
+                            </div>
+                            <!-- Controls under letter -->
+                            <div
+                                class="mt-space-lg pt-space-md flex flex-wrap items-center justify-between gap-space-sm border-0">
+                                <div class="flex items-center gap-space-xs">
+                                    <button
+                                        class="px-space-md py-space-xs rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-all flex items-center gap-1"
+                                        onclick="restartTypewriter()" type="button">
+                                        <span class="material-symbols-outlined text-sm">replay</span>
+                                        <span>Replay Letter</span>
+                                    </button>
+                                    <button
+                                        class="px-space-md py-space-xs rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-all flex items-center gap-1"
+                                        onclick="editLetterModal()" type="button">
+                                        <span class="material-symbols-outlined text-sm">edit</span>
+                                        <span>Edit Note</span>
+                                    </button>
+                                </div>
+                                <button
+                                    class="px-space-lg py-space-xs rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-label-md text-label-md shadow-md hover:scale-105 transition-all flex items-center gap-1"
+                                    onclick="goToChapter('memories')" type="button">
+                                    <span>View Our Memories</span>
+                                    <span class="material-symbols-outlined text-sm">photo_library</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- CHAPTER 5: OUR MEMORIES (POLAROID GALLERY + LIGHTBOX) -->
+            <section
+                class="chapter-pane hidden min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center relative px-margin py-space-xl"
+                id="chapter-memories">
+                <div class="max-w-6xl mx-auto w-full">
+                    <div class="flex flex-col items-center text-center mb-space-xl">
+                        <div
+                            class="px-space-md py-space-xs rounded-full bg-surface-container-low/80 text-secondary font-label-sm text-label-sm uppercase tracking-widest mb-space-xs">
+                            Chapter V · The Keepsake Carousel
+                        </div>
+                        <h2
+                            class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-semibold">
+                            Polaroids of Our Beautiful Story
+                        </h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant max-w-lg mt-space-xs">
+                            Little frozen pockets of time, laughter, sunsets, and warm coffee cups with you.
+                        </p>
+                    </div>
+                    <!-- Polaroid Keepsake Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-space-lg items-center">
+                        <!-- Polaroid 1: Beach Sunset (IMAGE_4) -->
+                        <div class="polaroid-card group cursor-pointer bg-[#fdfbf7] p-3 rounded-xl shadow-xl transform -rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300"
+                            onclick="openLightbox('https://lh3.googleusercontent.com/aida-public/AB6AXuCjy2kC18AIswVADkKt-L6ihNfeGB2ixTgoyTmQ4mYzUZCIfagzJy_YW9OHaaYBW0lXPl9bmozEeoOrQWn2mrIMUe9uhJ1OqbpN3EcXOTir4y_O96n5GkKq4bb0g0hjLLUzup2HMLzEzQoU633ZXOyqWma2TUCDczaoNZTL2BLQWzUkX-9Od8jVWfZJ_nEt6u-J8avFa_VQByvDYZuXkPskVw8Qc7Ixl8E7G69Gn9ywcmIpa43ez_xw', 'Aesthetic Sunset Walk', 'The calm evening tide under painted lavender skies.')">
+                            <div class="aspect-square rounded-lg overflow-hidden bg-surface-container-highest">
+                                <img alt="Couple walking at beach sunset holding hands"
+                                    class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjy2kC18AIswVADkKt-L6ihNfeGB2ixTgoyTmQ4mYzUZCIfagzJy_YW9OHaaYBW0lXPl9bmozEeoOrQWn2mrIMUe9uhJ1OqbpN3EcXOTir4y_O96n5GkKq4bb0g0hjLLUzup2HMLzEzQoU633ZXOyqWma2TUCDczaoNZTL2BLQWzUkX-9Od8jVWfZJ_nEt6u-J8avFa_VQByvDYZuXkPskVw8Qc7Ixl8E7G69Gn9ywcmIpa43ez_xw" />
+                            </div>
+                            <div
+                                class="pt-3 pb-1 text-center font-serif text-[#333345] font-semibold text-lg italic tracking-wide">
+                                Aesthetic Sunset Walk ❤️
+                            </div>
+                        </div>
+                        <!-- Polaroid 2: Cozy Cafe Date (IMAGE_5) -->
+                        <div class="polaroid-card group cursor-pointer bg-[#fdfbf7] p-3 rounded-xl shadow-xl transform rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300"
+                            onclick="openLightbox('https://lh3.googleusercontent.com/aida-public/AB6AXuDFLtqPIr1rD_rlPTZFsoR9oBgawLGK6HIDRuLY8EgfVlCGLdzTYMqoV9_Lib2njhzgOOdWxxhDG7v_KfIXj4yaaoJU0C1LITkM4QtORbhcqZx9EIdFQ32VE9N5oEBKT1wdBmiXXX9QoByhZ284UV9T7-8ssjMxMOQJe-T-GD85j1Ty-SMCFVPg3SvxLthLJMCC_5DyRj0KtEw7ReLyvQZEABaJvYSXXOkZMT-8J0gSVB-YJ4wpXVVV', 'Cozy Cafe Date', 'Hot matcha, sweet strawberry cake, and endless laughter.')">
+                            <div class="aspect-square rounded-lg overflow-hidden bg-surface-container-highest">
+                                <img alt="Warm cafe date with couple sharing matcha and strawberry shortcake"
+                                    class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFLtqPIr1rD_rlPTZFsoR9oBgawLGK6HIDRuLY8EgfVlCGLdzTYMqoV9_Lib2njhzgOOdWxxhDG7v_KfIXj4yaaoJU0C1LITkM4QtORbhcqZx9EIdFQ32VE9N5oEBKT1wdBmiXXX9QoByhZ284UV9T7-8ssjMxMOQJe-T-GD85j1Ty-SMCFVPg3SvxLthLJMCC_5DyRj0KtEw7ReLyvQZEABaJvYSXXOkZMT-8J0gSVB-YJ4wpXVVV" />
+                            </div>
+                            <div
+                                class="pt-3 pb-1 text-center font-serif text-[#333345] font-semibold text-lg italic tracking-wide">
+                                Cozy Cafe Date ☕
+                            </div>
+                        </div>
+                        <!-- Polaroid 3: Stargazing Night -->
+                        <div class="polaroid-card group cursor-pointer bg-[#fdfbf7] p-3 rounded-xl shadow-xl transform -rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-300"
+                            onclick="openLightbox('placeholder', 'Stargazing Under Midnight Skies', 'Sitting side by side naming distant constellations together.')">
+                            <div class="aspect-square rounded-lg overflow-hidden bg-surface-container-highest">
+                                <img class="w-full h-full object-cover"
+                                    data-alt="Romantic young couple wrapped in a cozy woven blanket stargazing on a soft grassy hillside under a breathtaking violet milky way galaxy and falling shooting stars aesthetic photograph"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDay6ygHbtgem4cHn0C1aMBIhRlep9WqePs68bYI3TfXcl-ka405Tx4UH2V2XCMoCwZG2xxSwPHHDaCXeXNPv4md8u_GRzfC3KJ-VOcSTkJmJywH_EsiG-g3HXhrO5CcLDLSuO3OKof_rlDCfM8Us3m_MMYyppe4S_VcigdovRYcL0TcG7-MMeeONTgeaGeRH34-iawwXUT7qUg-5L_CroDqTT7x5DUWRee2MOy7wzyINdb-8tvupqR" />
+                            </div>
+                            <div
+                                class="pt-3 pb-1 text-center font-serif text-[#333345] font-semibold text-lg italic tracking-wide">
+                                Our Secret Stars ✨
+                            </div>
+                        </div>
+                        <!-- Polaroid 4: Roadtrip Adventures -->
+                        <div class="polaroid-card group cursor-pointer bg-[#fdfbf7] p-3 rounded-xl shadow-xl transform rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-300"
+                            onclick="openLightbox('placeholder', 'Summer Roadtrip Escape', 'Singing old songs at the top of our lungs with the windows down.')">
+                            <div class="aspect-square rounded-lg overflow-hidden bg-surface-container-highest">
+                                <img class="w-full h-full object-cover"
+                                    data-alt="Two romantic lovers smiling joyfully inside a vintage convertible car along a coastal highway lined with wild blooming flowers and golden sunlight cinematic editorial shot"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSc07yZs6gR14J2cW-nd_0880zErF0cTVrO-YY57DZB4-ZHKYTDOTZQM109sZMPuMSssvwjQ9CLvhxoPEnBEO32rSXyTus0c3-THAo3UeyK08hMjMbinPX1bDwZ0MFQfZn0PGz1zaf7IGq0a8QboorQ7o0HG3JJdHTmzeCCbpCT4PQWDNEE6UJacg7zacz5OmcTJpwb4S7wetXCshr9IlGORKswrkbFsik4_4Di0Pr_NuimWjhmNtO" />
+                            </div>
+                            <div
+                                class="pt-3 pb-1 text-center font-serif text-[#333345] font-semibold text-lg italic tracking-wide">
+                                Roadtrip Laughs 🌸
+                            </div>
+                        </div>
+                        <!-- Polaroid 5: Hand in Hand -->
+                        <div class="polaroid-card group cursor-pointer bg-[#fdfbf7] p-3 rounded-xl shadow-xl transform -rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300"
+                            onclick="openLightbox('placeholder', 'Hand In Hand Forever', 'My favorite feeling in the world is your fingers intertwined with mine.')">
+                            <div class="aspect-square rounded-lg overflow-hidden bg-surface-container-highest">
+                                <img class="w-full h-full object-cover"
+                                    data-alt="Macro close up of two lovers delicately holding hands adorned with delicate silver friendship rings with soft golden bokeh and starlight glow warm romantic mood"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYczRxl29kKB_8j_r7ae5wUh-A9fzMfMu095VlVYhFjlL_DR8QqBYIru_Tqw-BFBWcA6p2VnztJg0FCcj7k_WkMiabxJyZyvJiv0s94W4QfBxAlN9fgMZcRSoOvMN0g8WSfrn8nIuu4dBrL2JebIPznrEVKAFMe8Tw_2IM0je0U2oqhylEzden9mwUQLBE2lqXMSRBudWZl_wDgUUAEs6HAR_3rVqrDy-7G4iOMho7KzOqm7_7VPPl" />
+                            </div>
+                            <div
+                                class="pt-3 pb-1 text-center font-serif text-[#333345] font-semibold text-lg italic tracking-wide">
+                                Always With You 💫
+                            </div>
+                        </div>
+                        <!-- Polaroid 6: Surprise Birthday Moment -->
+                        <div class="polaroid-card group cursor-pointer bg-[#fdfbf7] p-3 rounded-xl shadow-xl transform rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300"
+                            onclick="openLightbox('https://lh3.googleusercontent.com/aida-public/AB6AXuAUOOzn2k3gQ7sPxLkmv1DLD75-SMAT36y69pJzu_cvX7IpZ1hEz7IoP4P-K0Z_QzPz7Pnv8xU2c7jUxSgV74CFS1H9cAHCGsw1fAxHyRXVOGYP3iG3v6HPO7HjBuBqVLEMBz4ERmg2Jf-zbgjUyjjJnIXcoX5Kt6sIfnTQcz7yKB5M7Thho6GOrZ6WadlcL1y9jALG-ScKqwcm8ohBaWjl9ETB0-CN4EDSeY_cji0Hm9IRMpP0YI2J', 'Heart Balloon Haven', 'A canopy of warm festive lights dedicated only to your smile.')">
+                            <div class="aspect-square rounded-lg overflow-hidden bg-surface-container-highest">
+                                <img alt="Glow Heart Balloon Tree over Dreamy Twilight Town"
+                                    class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUOOzn2k3gQ7sPxLkmv1DLD75-SMAT36y69pJzu_cvX7IpZ1hEz7IoP4P-K0Z_QzPz7Pnv8xU2c7jUxSgV74CFS1H9cAHCGsw1fAxHyRXVOGYP3iG3v6HPO7HjBuBqVLEMBz4ERmg2Jf-zbgjUyjjJnIXcoX5Kt6sIfnTQcz7yKB5M7Thho6GOrZ6WadlcL1y9jALG-ScKqwcm8ohBaWjl9ETB0-CN4EDSeY_cji0Hm9IRMpP0YI2J" />
+                            </div>
+                            <div
+                                class="pt-3 pb-1 text-center font-serif text-[#333345] font-semibold text-lg italic tracking-wide">
+                                My Forever Home ❤️
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Navigation footer -->
+                    <div class="mt-space-xl flex items-center justify-center gap-space-md">
+                        <button
+                            class="px-space-md py-space-sm rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-container"
+                            onclick="goToChapter('love-letter')" type="button">
+                            ← Previous
+                        </button>
+                        <button
+                            class="px-space-xl py-space-md rounded-full bg-gradient-to-r from-secondary to-primary text-on-primary font-label-lg text-label-lg shadow-lg hover:scale-105 transition-all flex items-center gap-space-xs"
+                            onclick="goToChapter('why-youre-special')" type="button">
+                            <span>Discover Why You're Special</span>
+                            <span class="material-symbols-outlined text-base">sentiment_very_satisfied</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!-- CHAPTER 6: WHY YOU ARE SPECIAL (REASONS I LOVE YOU) -->
+            <section
+                class="chapter-pane hidden min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center relative px-margin py-space-xl"
+                id="chapter-why-youre-special">
+                <div class="max-w-5xl mx-auto w-full">
+                    <div class="flex flex-col items-center text-center mb-space-xl">
+                        <div
+                            class="px-space-md py-space-xs rounded-full bg-surface-container-low/80 text-primary font-label-sm text-label-sm uppercase tracking-widest mb-space-xs">
+                            Chapter VI · Six Celestial Reasons
+                        </div>
+                        <h2
+                            class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-semibold">
+                            Why You Mean The Entire World To Me
+                        </h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant max-w-lg mt-space-xs">
+                            There are countless galaxies in the sky, but none shine with the quiet brilliance of your
+                            soul.
+                        </p>
+                    </div>
+                    <!-- 6 Interactive Glowing Reason Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+                        <!-- Reason 1 -->
+                        <div
+                            class="p-space-lg rounded-2xl bg-surface-container/70 backdrop-blur-md shadow-md hover:shadow-[0_0_25px_rgba(244,114,182,0.25)] hover:-translate-y-1 transition-all group">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-primary/20 text-primary flex items-center justify-center mb-space-md group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-2xl">sentiment_satisfied_alt</span>
+                            </div>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface font-medium mb-space-xs">Your
+                                Luminous Smile</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Whenever you laugh freely, even
+                                the heaviest days dissolve into sunshine and peace.</p>
+                        </div>
+                        <!-- Reason 2 -->
+                        <div
+                            class="p-space-lg rounded-2xl bg-surface-container/70 backdrop-blur-md shadow-md hover:shadow-[0_0_25px_rgba(221,184,255,0.25)] hover:-translate-y-1 transition-all group">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-secondary/20 text-secondary flex items-center justify-center mb-space-md group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-2xl">magic_button</span>
+                            </div>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface font-medium mb-space-xs">Making
+                                Moments Magic</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Even quiet grocery runs or
+                                listening to rain in the car feels like cinematic poetry when you're there.</p>
+                        </div>
+                        <!-- Reason 3 -->
+                        <div
+                            class="p-space-lg rounded-2xl bg-surface-container/70 backdrop-blur-md shadow-md hover:shadow-[0_0_25px_rgba(255,185,95,0.25)] hover:-translate-y-1 transition-all group">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-tertiary/20 text-tertiary flex items-center justify-center mb-space-md group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-2xl">psychology_alt</span>
+                            </div>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface font-medium mb-space-xs">
+                                Understanding Silence</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant">You read my heart with just one
+                                glance. With you, I never have to hide who I truly am.</p>
+                        </div>
+                        <!-- Reason 4 -->
+                        <div
+                            class="p-space-lg rounded-2xl bg-surface-container/70 backdrop-blur-md shadow-md hover:shadow-[0_0_25px_rgba(244,114,182,0.25)] hover:-translate-y-1 transition-all group">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-primary-container/20 text-primary-container flex items-center justify-center mb-space-md group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-2xl">volunteer_activism</span>
+                            </div>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface font-medium mb-space-xs">Your
+                                Tender Heart</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant">The delicate empathy and
+                                unconditional care you shower onto everyone around you is pure grace.</p>
+                        </div>
+                        <!-- Reason 5 -->
+                        <div
+                            class="p-space-lg rounded-2xl bg-surface-container/70 backdrop-blur-md shadow-md hover:shadow-[0_0_25px_rgba(221,184,255,0.25)] hover:-translate-y-1 transition-all group">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-secondary-container/30 text-secondary flex items-center justify-center mb-space-md group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-2xl">stars</span>
+                            </div>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface font-medium mb-space-xs">My
+                                Safest Haven</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant">In a restless and unpredictable
+                                universe, having your arms around me is returning to safe harbor.</p>
+                        </div>
+                        <!-- Reason 6 -->
+                        <div
+                            class="p-space-lg rounded-2xl bg-surface-container/70 backdrop-blur-md shadow-md hover:shadow-[0_0_25px_rgba(255,185,95,0.25)] hover:-translate-y-1 transition-all group">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-tertiary-container/30 text-tertiary flex items-center justify-center mb-space-md group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-2xl">all_inclusive</span>
+                            </div>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface font-medium mb-space-xs">
+                                Forever Favorite Person</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Yesterday, right now in this
+                                breath, tomorrow, and throughout every single chapter ahead.</p>
+                        </div>
+                    </div>
+                    <!-- Navigation footer -->
+                    <div class="mt-space-xl flex items-center justify-center gap-space-md">
+                        <button
+                            class="px-space-md py-space-sm rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-container"
+                            onclick="goToChapter('memories')" type="button">
+                            ← Back to Memories
+                        </button>
+                        <button
+                            class="px-space-xl py-space-md rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-label-lg text-label-lg shadow-lg hover:scale-105 transition-all flex items-center gap-space-xs"
+                            onclick="goToChapter('find-my-heart')" type="button">
+                            <span>Play "Find My Heart" Game</span>
+                            <span class="material-symbols-outlined text-base">videogame_asset</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!-- CHAPTER 7: INTERACTIVE HEART GAME ("FIND MY HEART") -->
+            <section
+                class="chapter-pane hidden min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center relative px-margin py-space-xl"
+                id="chapter-find-my-heart">
+                <div class="max-w-4xl mx-auto w-full flex flex-col items-center text-center">
+                    <div
+                        class="px-space-md py-space-xs rounded-full bg-surface-container-low/80 text-secondary font-label-sm text-label-sm uppercase tracking-widest mb-space-xs">
+                        Chapter VII · Celestial Mini-Game
+                    </div>
+                    <h2
+                        class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-semibold">
+                        Can You Find Where My Heart Hides?
+                    </h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant max-w-lg mt-space-xs mb-space-lg">
+                        My heart is wandering through the constellations. Tap the floating starlit hearts to find the
+                        one that beats solely for you!
+                    </p>
+                    <!-- Game Stage Box with floating hearts -->
+                    <div class="relative w-full max-w-2xl h-96 rounded-3xl bg-surface-container-lowest/80 backdrop-blur-xl shadow-2xl overflow-hidden p-space-md flex items-center justify-center"
+                        id="game-stage">
+                        <!-- Playful hint banner -->
+                        <div class="absolute top-4 left-1/2 -translate-x-1/2 px-space-md py-space-xs rounded-full bg-surface-container-high/90 text-primary font-label-sm text-label-sm shadow-sm transition-all pointer-events-none"
+                            id="game-hint">
+                            Click the hearts to search! ❤️
+                        </div>
+                        <!-- 8 Floating Heart Orbs -->
+                        <!-- Heart 1 (False) -->
+                        <button
+                            class="absolute top-12 left-10 w-14 h-14 rounded-full bg-surface-container-high/60 hover:bg-primary/30 flex items-center justify-center shadow-md hover:scale-125 transition-all text-primary/70 animate-pulse"
+                            onclick="clickWrongHeart(this, 'Almost! But my heart beats warmer than this ✨')"
+                            type="button">
+                            <span class="material-symbols-outlined text-2xl">favorite</span>
+                        </button>
+                        <!-- Heart 2 (False) -->
+                        <button
+                            class="absolute top-28 right-16 w-16 h-16 rounded-full bg-surface-container-high/60 hover:bg-secondary/30 flex items-center justify-center shadow-md hover:scale-125 transition-all text-secondary/70 animate-bounce"
+                            onclick="clickWrongHeart(this, 'Warmer! Keep looking towards the light 💫')"
+                            style="animation-duration: 3s;" type="button">
+                            <span class="material-symbols-outlined text-3xl">favorite</span>
+                        </button>
+                        <!-- Heart 3 (False) -->
+                        <button
+                            class="absolute bottom-16 left-20 w-12 h-12 rounded-full bg-surface-container-high/60 hover:bg-tertiary/30 flex items-center justify-center shadow-md hover:scale-125 transition-all text-tertiary/70 animate-pulse"
+                            onclick="clickWrongHeart(this, 'That was a sweet star, but not the true one! 🌟')"
+                            type="button">
+                            <span class="material-symbols-outlined text-2xl">favorite</span>
+                        </button>
+                        <!-- Heart 4: THE TRUE HEART (Key) -->
+                        <button
+                            class="relative z-10 w-20 h-20 rounded-full bg-gradient-to-tr from-primary-container via-primary to-secondary flex items-center justify-center shadow-[0_0_35px_rgba(244,114,182,0.8)] hover:scale-125 transition-all animate-bounce"
+                            id="true-heart-orb" onclick="clickTrueHeart()" style="animation-duration: 2s;"
+                            title="Is this the one?" type="button">
+                            <span
+                                class="material-symbols-outlined text-on-primary text-4xl animate-pulse">favorite</span>
+                        </button>
+                        <!-- Heart 5 (False) -->
+                        <button
+                            class="absolute bottom-12 right-24 w-14 h-14 rounded-full bg-surface-container-high/60 hover:bg-primary/30 flex items-center justify-center shadow-md hover:scale-125 transition-all text-primary/70 animate-pulse"
+                            onclick="clickWrongHeart(this, 'Close! But my heart radiates extra glow! 💕')"
+                            style="animation-duration: 2.5s;" type="button">
+                            <span class="material-symbols-outlined text-2xl">favorite</span>
+                        </button>
+                        <!-- Heart 6 (False) -->
+                        <button
+                            class="absolute top-8 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-surface-container-high/60 hover:bg-secondary/30 flex items-center justify-center shadow-md hover:scale-125 transition-all text-secondary/70"
+                            onclick="clickWrongHeart(this, 'Try the center of my galaxy! ✨')" type="button">
+                            <span class="material-symbols-outlined text-2xl">favorite</span>
+                        </button>
+                    </div>
+                    <!-- Found True Heart Modal Banner -->
+                    <div class="hidden mt-space-lg p-space-lg rounded-3xl bg-surface-container/90 backdrop-blur-xl max-w-xl w-full text-center shadow-2xl border-0 animate-fade-in"
+                        id="found-heart-modal">
+                        <span
+                            class="material-symbols-outlined text-primary text-5xl mb-space-xs animate-bounce">volunteer_activism</span>
+                        <h3 class="font-headline-md text-headline-md text-on-surface font-semibold">You Found My Heart!
+                            ❤️</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs mb-space-md">
+                            "And it will always, without hesitation or condition, belong entirely to you."
+                        </p>
+                        <button
+                            class="px-space-xl py-space-md rounded-full bg-gradient-to-r from-primary via-primary-container to-secondary text-on-primary font-label-lg text-label-lg shadow-[0_0_25px_rgba(244,114,182,0.5)] hover:scale-105 transition-all flex items-center justify-center gap-space-xs mx-auto"
+                            onclick="goToChapter('grand-finale')" type="button">
+                            <span>Proceed to Grand Finale</span>
+                            <span class="material-symbols-outlined text-base">auto_awesome</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!-- CHAPTER 8: GRAND FINALE & PROPOSAL QUESTION -->
+            <section
+                class="chapter-pane hidden min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center relative px-margin py-space-xl text-center"
+                id="chapter-grand-finale">
+                <canvas class="absolute inset-0 pointer-events-none z-0" id="fireworks-canvas"></canvas>
+                <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+                    <!-- Romantic Overline Badge -->
+                    <div
+                        class="px-space-md py-space-xs rounded-full bg-surface-container-low/80 text-tertiary font-label-sm text-label-sm uppercase tracking-widest mb-space-md flex items-center gap-space-xs shadow-sm">
+                        <span class="material-symbols-outlined text-sm">favorite</span>
+                        <span>The Question From My Soul · Proposal</span>
+                        <span class="material-symbols-outlined text-sm">favorite</span>
+                    </div>
+                    <!-- Hero Glow Balloon Tree Image -->
+                    <div
+                        class="w-48 h-48 sm:w-60 sm:h-60 rounded-full p-2 bg-gradient-to-tr from-primary via-secondary to-tertiary shadow-2xl mb-space-md animate-pulse">
+                        <img alt="Glow Heart Balloon Tree over Dreamy Twilight Town"
+                            class="w-full h-full object-cover rounded-full"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUOOzn2k3gQ7sPxLkmv1DLD75-SMAT36y69pJzu_cvX7IpZ1hEz7IoP4P-K0Z_QzPz7Pnv8xU2c7jUxSgV74CFS1H9cAHCGsw1fAxHyRXVOGYP3iG3v6HPO7HjBuBqVLEMBz4ERmg2Jf-zbgjUyjjJnIXcoX5Kt6sIfnTQcz7yKB5M7Thho6GOrZ6WadlcL1y9jALG-ScKqwcm8ohBaWjl9ETB0-CN4EDSeY_cji0Hm9IRMpP0YI2J" />
+                    </div>
+                    <h1
+                        class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface font-semibold tracking-tight">
+                        Will You Be Mine? <span class="text-primary italic">My Love</span> ❤️
+                    </h1>
+                    <p
+                        class="font-headline-sm text-headline-sm text-on-surface-variant max-w-2xl mt-space-sm mb-space-xl italic">
+                        "I fell in love with your smile, your warmth, and your beautiful soul. Will you make me the happiest person and walk this journey with me?"
+                    </p>
+                    <!-- Interactive Proposal Option Buttons -->
+                    <div class="flex flex-wrap items-center justify-center gap-space-md mb-space-xl">
+                        <button
+                            class="px-space-xl py-space-md rounded-full bg-gradient-to-r from-primary-container via-primary to-secondary text-on-primary font-label-lg text-label-lg shadow-[0_0_35px_rgba(244,114,182,0.6)] hover:scale-110 active:scale-95 transition-all flex items-center gap-space-xs cursor-pointer"
+                            onclick="acceptProposal('yes')" type="button">
+                            <span class="material-symbols-outlined text-xl animate-bounce">favorite</span>
+                            <span>YES! Absolutely ❤️</span>
+                        </button>
+                        <button
+                            class="px-space-xl py-space-md rounded-full bg-gradient-to-r from-secondary via-tertiary to-primary text-on-primary font-label-lg text-label-lg shadow-[0_0_35px_rgba(221,184,255,0.6)] hover:scale-110 active:scale-95 transition-all flex items-center gap-space-xs cursor-pointer"
+                            onclick="acceptProposal('forever')" type="button">
+                            <span class="material-symbols-outlined text-xl animate-bounce">auto_awesome</span>
+                            <span>YES! Forever &amp; Always ✨</span>
+                        </button>
+                        <button
+                            class="px-space-lg py-space-md rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-md text-label-md transition-all flex items-center gap-space-xs"
+                            onclick="openSecretSurpriseModal()" type="button">
+                            <span class="material-symbols-outlined text-base">card_giftcard</span>
+                            <span>Proposal Promises 🎟️</span>
+                        </button>
+                    </div>
+                    <!-- Live Romance Stats Bento Box -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md w-full max-w-3xl text-left">
+                        <div class="p-space-md rounded-2xl bg-surface-container/60 backdrop-blur-md">
+                            <div class="flex items-center gap-space-xs text-primary mb-1">
+                                <span class="material-symbols-outlined text-sm">favorite</span>
+                                <span class="font-label-sm text-label-sm uppercase">Love Quotient</span>
+                            </div>
+                            <div class="font-headline-md text-headline-md font-bold text-on-surface">Infinity %</div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Growing with every breath.</p>
+                        </div>
+                        <div class="p-space-md rounded-2xl bg-surface-container/60 backdrop-blur-md">
+                            <div class="flex items-center gap-space-xs text-secondary mb-1">
+                                <span class="material-symbols-outlined text-sm">auto_stories</span>
+                                <span class="font-label-sm text-label-sm uppercase">Memories Ahead</span>
+                            </div>
+                            <div class="font-headline-md text-headline-md font-bold text-on-surface">A Lifetime</div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Waiting for us to write together.</p>
+                        </div>
+                        <div class="p-space-md rounded-2xl bg-surface-container/60 backdrop-blur-md">
+                            <div class="flex items-center gap-space-xs text-tertiary mb-1">
+                                <span class="material-symbols-outlined text-sm">sentiment_satisfied</span>
+                                <span class="font-label-sm text-label-sm uppercase">My Promise</span>
+                            </div>
+                            <div class="font-headline-md text-headline-md font-bold text-on-surface">Always Here</div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">To care, protect &amp; cherish you.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- LIGHTBOX MODAL -->
+            <div class="fixed inset-0 z-50 bg-surface-container-lowest/90 backdrop-blur-2xl flex items-center justify-center p-space-md opacity-0 pointer-events-none transition-all duration-300"
+                id="lightbox-modal">
+                <div
+                    class="relative max-w-2xl w-full bg-[#fdfbf7] p-4 sm:p-6 rounded-2xl shadow-2xl text-center text-[#2e2f41]">
+                    <button
+                        class="absolute top-3 right-3 w-10 h-10 rounded-full bg-surface-container-highest/20 hover:bg-surface-container-highest/40 flex items-center justify-center text-black"
+                        onclick="closeLightbox()" type="button">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                    <div
+                        class="aspect-video sm:aspect-square max-h-[60vh] rounded-xl overflow-hidden mb-4 bg-[#e2e0f8]">
+                        <img alt="Enlarged Memory" class="w-full h-full object-cover" id="lightbox-img" src="" />
+                    </div>
+                    <h3 class="font-headline-md text-headline-md font-bold text-[#111222]" id="lightbox-title"></h3>
+                    <p class="font-body-md text-body-md text-[#544249] mt-2 italic" id="lightbox-desc"></p>
+                </div>
+            </div>
+            <!-- PROPOSAL ACCEPTED MODAL -->
+            <div class="fixed inset-0 z-50 bg-surface-container-lowest/90 backdrop-blur-2xl flex items-center justify-center p-space-md opacity-0 pointer-events-none transition-all duration-300"
+                id="proposal-accepted-modal">
+                <div
+                    class="relative max-w-lg w-full p-space-xl rounded-3xl bg-surface-container shadow-2xl text-center border-0">
+                    <button
+                        class="absolute top-4 right-4 w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-bright"
+                        onclick="closeProposalModal()" type="button">
+                        <span class="material-symbols-outlined text-base">close</span>
+                    </button>
+                    <div
+                        class="w-20 h-20 rounded-full bg-primary/20 text-primary flex items-center justify-center mx-auto mb-space-md animate-bounce">
+                        <span class="material-symbols-outlined text-4xl">favorite</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-primary font-bold mb-space-xs">
+                        YOU SAID YES! 💖✨
+                    </h3>
+                    <p class="font-body-lg text-body-lg text-on-surface mb-space-md">
+                        You just made me the happiest person in the whole universe!
+                    </p>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-space-xl leading-relaxed">
+                        I promise to cherish you, make you smile every single day, listen to your heart, and stand by your side through every chapter of our lives.
+                    </p>
+                    <button
+                        class="w-full py-space-md rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-label-lg text-label-lg shadow-lg hover:scale-105 transition-all"
+                        onclick="closeProposalModal()" type="button">
+                        Hold Hands &amp; Begin Our Story ❤️
+                    </button>
+                </div>
+            </div>
+            <!-- SECRET SURPRISE / PROPOSAL PROMISES MODAL -->
+            <div class="fixed inset-0 z-50 bg-surface-container-lowest/90 backdrop-blur-2xl flex items-center justify-center p-space-md opacity-0 pointer-events-none transition-all duration-300"
+                id="secret-modal">
+                <div
+                    class="relative max-w-lg w-full p-space-xl rounded-3xl bg-surface-container shadow-2xl text-center border-0">
+                    <button
+                        class="absolute top-4 right-4 w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-bright"
+                        onclick="closeSecretModal()" type="button">
+                        <span class="material-symbols-outlined text-base">close</span>
+                    </button>
+                    <div
+                        class="w-16 h-16 rounded-full bg-primary/20 text-primary flex items-center justify-center mx-auto mb-space-md">
+                        <span class="material-symbols-outlined text-3xl animate-bounce">card_membership</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-space-xs">
+                        Proposal Promises &amp; Vouchers 🎟️
+                    </h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
+                        These sacred promises belong to you forever:
+                    </p>
+                    <div class="space-y-space-sm text-left mb-space-xl">
+                        <div class="p-space-sm rounded-xl bg-surface-container-low flex items-center gap-space-sm">
+                            <span class="material-symbols-outlined text-primary">local_cafe</span>
+                            <span class="font-label-md text-label-md text-on-surface">Unlimited Coffee Dates &amp; Late Night Calls</span>
+                        </div>
+                        <div class="p-space-sm rounded-xl bg-surface-container-low flex items-center gap-space-sm">
+                            <span class="material-symbols-outlined text-secondary">spa</span>
+                            <span class="font-label-md text-label-md text-on-surface">Unconditional Care, Listening &amp; Warm Hugs</span>
+                        </div>
+                        <div class="p-space-sm rounded-xl bg-surface-container-low flex items-center gap-space-sm">
+                            <span class="material-symbols-outlined text-tertiary">flight_takeoff</span>
+                            <span class="font-label-md text-label-md text-on-surface">1x Surprise Sunset Walk &amp; Roadtrip Together</span>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full py-space-md rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-label-lg text-label-lg shadow-lg hover:scale-105 transition-all"
+                        onclick="claimVoucher()" type="button">
+                        Accept With All My Heart ❤️
+                    </button>
+                </div>
+            </div>
+            <!-- FLOATING CHAPTER NAVIGATOR PILL -->
+            <div
+                class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 px-space-md py-space-xs rounded-full bg-surface-container-highest/80 backdrop-blur-xl shadow-2xl flex items-center gap-space-xs border-0">
+                <button
+                    class="w-8 h-8 rounded-full hover:bg-surface-bright flex items-center justify-center text-on-surface"
+                    onclick="prevChapter()" title="Previous Chapter" type="button">
+                    <span class="material-symbols-outlined text-sm">arrow_back</span>
+                </button>
+                <span class="font-label-sm text-label-sm text-primary uppercase tracking-wider px-2"
+                    id="current-chapter-label">Welcome</span>
+                <button
+                    class="w-8 h-8 rounded-full hover:bg-surface-bright flex items-center justify-center text-on-surface"
+                    onclick="nextChapter()" title="Next Chapter" type="button">
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+        <script>
+            // Chapter Flow Setup
+            const chapters = [
+                'welcome',
+                'countdown',
+                'wish-cake',
+                'love-letter',
+                'memories',
+                'why-youre-special',
+                'find-my-heart',
+                'grand-finale'
+            ];
+
+            let currentChapterIdx = 0;
+
+            function updateActiveNavTokens(chapterKey) {
+                document.querySelectorAll('nav a[data-path]').forEach(link => {
+                    if (link.getAttribute('data-path') === chapterKey) {
+                        link.className = "px-space-sm py-space-xs rounded-full font-label-md text-label-md bg-primary text-on-primary shadow-[0_0_16px_rgba(255,175,211,0.5)] font-semibold scale-105 transition-all";
+                    } else {
+                        link.className = "px-space-sm py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all";
+                    }
+                });
+
+                // update label in floating pill
+                const labelEl = document.getElementById('current-chapter-label');
+                if (labelEl) {
+                    const formatted = chapterKey.replace(/-/g, ' ');
+                    labelEl.innerText = formatted.toUpperCase();
+                }
+            }
+
+            function goToChapter(chapterKey) {
+                const idx = chapters.indexOf(chapterKey);
+                if (idx !== -1) currentChapterIdx = idx;
+
+                document.querySelectorAll('.chapter-pane').forEach(pane => {
+                    pane.classList.add('hidden');
+                });
+
+                const targetPane = document.getElementById(`chapter-${chapterKey}`);
+                if (targetPane) {
+                    targetPane.classList.remove('hidden');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+
+                updateActiveNavTokens(chapterKey);
+
+                if (chapterKey === 'love-letter') {
+                    // automatically trigger typewriter if open
+                    if (!letterHasTyped) {
+                        openLoveLetter();
+                    }
+                }
+                if (chapterKey === 'grand-finale') {
+                    launchFireworks();
+                }
+            }
+
+            function nextChapter() {
+                currentChapterIdx = (currentChapterIdx + 1) % chapters.length;
+                goToChapter(chapters[currentChapterIdx]);
+            }
+
+            function prevChapter() {
+                currentChapterIdx = (currentChapterIdx - 1 + chapters.length) % chapters.length;
+                goToChapter(chapters[currentChapterIdx]);
+            }
+
+            // Intercept header link clicks to navigate smoothly between chapters
+            document.querySelectorAll('nav a[data-path]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const path = link.getAttribute('data-path');
+                    if (path) goToChapter(path);
+                });
+            });
+
+            // Countdown timer logic
+            function startCountdown() {
+                let days = 0;
+                let hours = 14;
+                let minutes = 28;
+                let seconds = 59;
+
+                setInterval(() => {
+                    seconds--;
+                    if (seconds < 0) {
+                        seconds = 59;
+                        minutes--;
+                        if (minutes < 0) {
+                            minutes = 59;
+                            hours--;
+                            if (hours < 0) {
+                                hours = 23;
+                                days = Math.max(0, days - 1);
+                            }
+                        }
+                    }
+                    const d = document.getElementById('timer-days');
+                    const h = document.getElementById('timer-hours');
+                    const m = document.getElementById('timer-minutes');
+                    const s = document.getElementById('timer-seconds');
+                    if (d) d.innerText = String(days).padStart(2, '0');
+                    if (h) h.innerText = String(hours).padStart(2, '0');
+                    if (m) m.innerText = String(minutes).padStart(2, '0');
+                    if (s) s.innerText = String(seconds).padStart(2, '0');
+                }, 1000);
+            }
+
+            // Interactive Birthday Cake
+            let candleBlown = false;
+            function blowCandle() {
+                if (candleBlown) return;
+                candleBlown = true;
+
+                const flame = document.getElementById('candle-flame');
+                const smoke = document.getElementById('candle-smoke');
+                const revealed = document.getElementById('wish-revealed');
+                const btnText = document.getElementById('blow-btn-text');
+
+                if (flame) flame.classList.add('opacity-0', 'scale-50');
+                if (smoke) smoke.classList.remove('hidden');
+                if (revealed) revealed.classList.remove('hidden');
+                if (btnText) btnText.innerText = "Wish Sent! ✨";
+
+                triggerConfettiShower();
+                showToast("✨ Starlight wish sent to the cosmos!");
+            }
+
+            // Typewriter Proposal Letter
+            let letterHasTyped = false;
+            const letterLines = [
+                "Dearest,",
+                "I've spent a lot of time searching for the right words, but no dictionary holds words sweet enough to capture what you mean to me.",
+                "From the moment you entered my life, every ordinary day turned into something extraordinary. Your laugh is my favorite melody, your smile is my brightest light, and your kindness makes the whole world feel warmer.",
+                "Every quiet moment with you feels like coming home, and every conversation we share is a memory I cherish deeply.",
+                "I used to wonder if stars could shine in someone's eyes, until I looked into yours. I don't just admire you from afar anymore... I have fallen completely, hopelessly, and deeply in love with you.",
+                "You are the person I look forward to talking to every single day, the one who brings peace to my mind and pure magic to my heart.",
+                "So today, under all these stars, I want to ask you the question that has been beating inside my heart:",
+                "Will you be my partner, my love, and make me the happiest person in the universe? 💖",
+                "Yours forever & always ❤️"
+            ];
+
+            function openLoveLetter() {
+                document.getElementById('closed-envelope').classList.add('hidden');
+                document.getElementById('open-letter').classList.remove('hidden');
+                restartTypewriter();
+            }
+
+            function restartTypewriter() {
+                const box = document.getElementById('letter-content-box');
+                if (!box) return;
+                box.innerText = "";
+                letterHasTyped = true;
+
+                let fullText = letterLines.join("\n\n");
+                let i = 0;
+
+                function typeChar() {
+                    if (i < fullText.length) {
+                        box.innerText += fullText.charAt(i);
+                        i++;
+                        setTimeout(typeChar, 25);
+                    }
+                }
+                typeChar();
+            }
+
+            function editLetterModal() {
+                const newMsg = prompt("Enter a sweet note to replace inside the letter:", letterLines[1]);
+                if (newMsg) {
+                    letterLines[1] = newMsg;
+                    restartTypewriter();
+                    showToast("Letter updated with love!");
+                }
+            }
+
+            // Lightbox Modal
+            function openLightbox(src, title, desc) {
+                const modal = document.getElementById('lightbox-modal');
+                const img = document.getElementById('lightbox-img');
+                const t = document.getElementById('lightbox-title');
+                const d = document.getElementById('lightbox-desc');
+
+                if (img) img.src = src;
+                if (t) t.innerText = title;
+                if (d) d.innerText = desc;
+
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+            }
+
+            function closeLightbox() {
+                const modal = document.getElementById('lightbox-modal');
+                modal.classList.add('opacity-0', 'pointer-events-none');
+            }
+
+            // "Find My Heart" Game
+            function clickWrongHeart(btn, hint) {
+                const banner = document.getElementById('game-hint');
+                if (banner) {
+                    banner.innerText = hint;
+                    banner.classList.add('scale-110', 'text-secondary');
+                    setTimeout(() => banner.classList.remove('scale-110', 'text-secondary'), 600);
+                }
+                btn.classList.add('opacity-30', 'scale-75');
+            }
+
+            function clickTrueHeart() {
+                const modal = document.getElementById('found-heart-modal');
+                if (modal) modal.classList.remove('hidden');
+                triggerConfettiShower();
+                showToast("❤️ You found my true heart! It will always be yours.");
+            }
+
+            // Proposal Handlers
+            function acceptProposal(type) {
+                launchFireworks();
+                triggerConfettiShower();
+                const modal = document.getElementById('proposal-accepted-modal');
+                if (modal) modal.classList.remove('opacity-0', 'pointer-events-none');
+                showToast("💖 YOU SAID YES! You made me the happiest person in the world!");
+            }
+
+            function closeProposalModal() {
+                const modal = document.getElementById('proposal-accepted-modal');
+                if (modal) modal.classList.add('opacity-0', 'pointer-events-none');
+            }
+
+            // Secret / Finale Modals
+            function openSecretSurpriseModal() {
+                const m = document.getElementById('secret-modal');
+                m.classList.remove('opacity-0', 'pointer-events-none');
+                triggerConfettiShower();
+            }
+
+            function closeSecretModal() {
+                const m = document.getElementById('secret-modal');
+                m.classList.add('opacity-0', 'pointer-events-none');
+            }
+
+            function claimVoucher() {
+                closeSecretModal();
+                showToast("🎉 Proposal promises accepted! Hearts connected forever.");
+            }
+
+            // Easter Egg in shell header: Secret heart
+            let secretClicks = 5;
+            const secretBtn = document.getElementById('secret-heart-easter-egg');
+            if (secretBtn) {
+                secretBtn.addEventListener('click', () => {
+                    secretClicks--;
+                    if (secretClicks > 0) {
+                        secretBtn.querySelector('span:last-child').innerText = `${secretClicks} Hearts Left`;
+                        showToast(`Keep tapping! ${secretClicks} taps left...`);
+                    } else {
+                        secretBtn.querySelector('span:last-child').innerText = "Unlocked! ✨";
+                        alert("P.S. You unlocked the secret note: I fell in love with your soul before I could even touch your skin. You are my forever home. ❤️");
+                        triggerConfettiShower();
+                    }
+                });
+            }
+
+            // Toast Function
+            function showToast(msg) {
+                const toast = document.getElementById('toast');
+                const toastText = document.getElementById('toast-text');
+                if (!toast || !toastText) return;
+
+                toastText.innerText = msg;
+                toast.classList.remove('opacity-0', '-translate-y-2');
+                setTimeout(() => {
+                    toast.classList.add('opacity-0', '-translate-y-2');
+                }, 2800);
+            }
+
+            function shareWebsiteLink() {
+                navigator.clipboard?.writeText(window.location.href);
+                showToast("Surprise link copied! Ready to share ❤️");
+            }
+
+            // Confetti Particle Burst
+            function triggerConfettiShower() {
+                const count = 30;
+                for (let i = 0; i < count; i++) {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = ['❤️', '✨', '🌸', '💖', '⭐'][Math.floor(Math.random() * 5)];
+                    heart.className = 'fixed pointer-events-none z-50 transition-all duration-1000 select-none text-2xl';
+                    heart.style.left = `${Math.random() * 90 + 5}vw`;
+                    heart.style.top = `-50px`;
+                    heart.style.transform = `scale(${Math.random() * 1.5 + 0.8})`;
+                    document.body.appendChild(heart);
+
+                    setTimeout(() => {
+                        heart.style.top = `${Math.random() * 80 + 20}vh`;
+                        heart.style.left = `${parseFloat(heart.style.left) + (Math.random() * 10 - 5)}vw`;
+                        heart.style.opacity = '0';
+                    }, 50);
+
+                    setTimeout(() => heart.remove(), 1100);
+                }
+            }
+
+            // Dynamic Stars Canvas for Welcome Screen
+            function initStarsCanvas() {
+                const canvas = document.getElementById('stars-canvas');
+                if (!canvas) return;
+                const ctx = canvas.getContext('2d');
+                let width = canvas.width = canvas.parentElement.offsetWidth;
+                let height = canvas.height = canvas.parentElement.offsetHeight;
+
+                const stars = Array.from({ length: 70 }, () => ({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    size: Math.random() * 2 + 0.5,
+                    alpha: Math.random(),
+                    speed: Math.random() * 0.02 + 0.005
+                }));
+
+                function draw() {
+                    ctx.clearRect(0, 0, width, height);
+                    stars.forEach(s => {
+                        s.alpha += s.speed;
+                        const op = (Math.sin(s.alpha) + 1) / 2;
+                        ctx.fillStyle = `rgba(255, 175, 211, ${op * 0.8})`;
+                        ctx.beginPath();
+                        ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+                        ctx.fill();
+                    });
+                    requestAnimationFrame(draw);
+                }
+                draw();
+
+                window.addEventListener('resize', () => {
+                    width = canvas.width = canvas.parentElement.offsetWidth;
+                    height = canvas.height = canvas.parentElement.offsetHeight;
+                });
+            }
+
+            // Ambient Fireworks for Finale
+            function launchFireworks() {
+                const canvas = document.getElementById('fireworks-canvas');
+                if (!canvas) return;
+                const ctx = canvas.getContext('2d');
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+
+                let particles = [];
+                const colors = ['#f472b6', '#c084fc', '#f59e0b', '#ffafd3', '#ffffff'];
+
+                function createBurst(x, y) {
+                    for (let i = 0; i < 40; i++) {
+                        const angle = Math.random() * Math.PI * 2;
+                        const speed = Math.random() * 4 + 1;
+                        particles.push({
+                            x, y,
+                            vx: Math.cos(angle) * speed,
+                            vy: Math.sin(angle) * speed,
+                            color: colors[Math.floor(Math.random() * colors.length)],
+                            alpha: 1,
+                            decay: Math.random() * 0.02 + 0.015
+                        });
+                    }
+                }
+
+                createBurst(window.innerWidth * 0.3, window.innerHeight * 0.35);
+                createBurst(window.innerWidth * 0.7, window.innerHeight * 0.4);
+
+                function render() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    particles.forEach((p, idx) => {
+                        p.x += p.vx;
+                        p.y += p.vy;
+                        p.alpha -= p.decay;
+                        if (p.alpha <= 0) {
+                            particles.splice(idx, 1);
+                        } else {
+                            ctx.fillStyle = p.color;
+                            ctx.globalAlpha = p.alpha;
+                            ctx.beginPath();
+                            ctx.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
+                            ctx.fill();
+                        }
+                    });
+                    ctx.globalAlpha = 1;
+                    if (particles.length > 0) {
+                        requestAnimationFrame(render);
+                    }
+                }
+                render();
+            }
+
+            // Audio Player setup
+            const audioBtn = document.querySelector('button[aria-label="Ambient Romantic Sound"]');
+            const audioEl = document.getElementById('audio-track');
+            let audioPlaying = false;
+
+            if (audioBtn && audioEl) {
+                audioBtn.addEventListener('click', () => {
+                    if (!audioPlaying) {
+                        audioEl.play().catch(() => { });
+                        audioPlaying = true;
+                        showToast("🎵 Soft romantic serenade playing");
+                    } else {
+                        audioEl.pause();
+                        audioPlaying = false;
+                        showToast("Paused ambient melody");
+                    }
+                });
+            }
+
+            // Init
+            window.addEventListener('DOMContentLoaded', () => {
+                updateActiveNavTokens('welcome');
+                startCountdown();
+                initStarsCanvas();
+            });
+        </script>
+    </main>
+    <footer class="relative z-10 w-full bg-surface-container-lowest/90 backdrop-blur-xl mt-space-xl">
+        <div
+            class="max-w-7xl mx-auto px-margin py-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-center sm:text-left">
+            <div class="flex items-center gap-space-sm"><span
+                    class="material-symbols-outlined text-primary text-xl drop-shadow-[0_0_8px_rgba(244,114,182,0.5)]">favorite</span>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Crafted with midnight starlight, quiet
+                    devotion &amp; eternal love.</p>
+            </div>
+            <div class="flex items-center gap-space-md"><span
+                    class="font-label-sm text-label-sm text-tertiary tracking-wider uppercase flex items-center gap-1"><span
+                        class="material-symbols-outlined text-xs">arrow_back_ios_new</span> Forever Yours</span></div>
+        </div>
+    </footer>
+</body>
+
+</html>
